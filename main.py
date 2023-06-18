@@ -13,12 +13,12 @@ os.system("pip install buttons")
 
 from discord.ext.buttons import Paginator
 
-prefix = "=="
+prefix = ""
 
-token = "OTM0NTAzOTUwMDU5NzA4NDE2.YexCnw.LpPyAWhj9g_1la0tD4dsaL-4mLg"
+token = ""
 
-client = discord.Client()
-client = commands.Bot(command_prefix=prefix, case_insensitive=True, help_command=None,
+idk = discord.Client()
+idk = commands.Bot(command_prefix=prefix, case_insensitive=True, help_command=None,
   intents=discord.Intents.all(), shard_count=1)
 
 
@@ -46,16 +46,16 @@ def botowner(ctx):
  
 
 @commands.check(botowner)
-@client.command(name="eval", aliases=["exec", "execute", "codexe", "jsk"], hidden=True)
+@idk.command(name="eval", aliases=["exec", "execute", "codexe", "jsk"], hidden=True)
 async def _eval(ctx, *, code):
     code = clean_code(code)
 
     local_variables = {
         "discord": discord,
         "commands": commands,
-        "bot": client,
+        "bot": idk,
         "token": token,
-        "client": client,
+        "client": idk,
         "ctx": ctx,
         "channel": ctx.channel,
         "author": ctx.author,
